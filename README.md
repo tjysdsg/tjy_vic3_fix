@@ -13,3 +13,10 @@ My additions include:
 
 - Some error fixes
 - Tweak IG Approval Rating in Outliner to have colored Interest Group name
+- Use icon+number to display peasants and unemployment (Prettify Unemployment and Peasant Data)
+
+# TODOs
+
+- 最缺的产品, 按价格sort, 选取前n个然后放成一排
+- 哪个建筑耗一个产品消耗的最多
+- 哪个pop turmoil和radical最高
