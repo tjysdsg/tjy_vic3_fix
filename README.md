@@ -15,6 +15,7 @@ My additions include:
 - Some error fixes
 - Tweak IG Approval Rating in Outliner to have colored Interest Group name
 - Use icon+number to display peasants and unemployment (Prettify Unemployment and Peasant Data)
+- Remove shadows on the ground
 
 # TODOs
 

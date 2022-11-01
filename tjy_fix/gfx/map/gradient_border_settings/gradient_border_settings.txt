@@ -11,9 +11,8 @@
 default = {
 	gradient_water_borders_zoom = @zoom_step_flatmap
 
-	
-	gradient_parameters = {
-		zoom_step = 0
+gradient_parameters = {
+		zoom_step = @zoom_step_ultra_near
 
 		gradient_alpha_inside = 	0
 		gradient_alpha_outside = 	0
@@ -29,83 +28,33 @@ default = {
 
 
 	gradient_parameters = {
-		zoom_step = 4
+		zoom_step = @zoom_step_near
 
 		gradient_alpha_inside = 	0
-		gradient_alpha_outside = 	0
-		gradient_width = 			0
+		gradient_alpha_outside = 	0.0
+		gradient_width = 			0.05
 		gradient_color_mult =		@color_multi
-		edge_width = 				0.0
-		edge_sharpness = 			0.05
-		edge_alpha = 				0
-		edge_color_mult = 			@color_multi
-		before_lighting_blend =	 	1
-		after_lighting_blend =		0
-	}
-
-
-      gradient_parameters = {
-		zoom_step = 5
-
-
-		gradient_alpha_inside = 	0
-		gradient_alpha_outside = 	0
-		gradient_width = 			0
-		gradient_color_mult =		@color_multi
-		edge_width = 				0.0
-		edge_sharpness = 			0.05
-		edge_alpha = 				0
-		edge_color_mult = 			@color_multi
-		before_lighting_blend =	 	1
-		after_lighting_blend =		0
-	}
-
-
-	gradient_parameters = {
-		zoom_step = 6
-		
-		
-		gradient_alpha_inside = 	0
-		gradient_alpha_outside = 	0
-		gradient_width = 			0
-		gradient_color_mult =		@color_multi
-		edge_width = 				0.0
-		edge_sharpness = 			0.05
-		edge_alpha = 				0
-		edge_color_mult = 			@color_multi
-		before_lighting_blend =	 	1
-		after_lighting_blend =		0
-	}
-
-	gradient_parameters = {
-		zoom_step = 7
-		
-		
-		gradient_alpha_inside = 	0.1
-		gradient_alpha_outside =    1.5
-		gradient_width = 			4
-		gradient_color_mult =		1.2
 		edge_width = 				0.01
-		edge_sharpness = 			0.03
-		edge_alpha = 				0.2
-		edge_color_mult = 			1.25
-		before_lighting_blend =		0.4
-		after_lighting_blend =		0.6
+		edge_sharpness = 			0.04
+		edge_alpha = 				0.8
+		edge_color_mult = 			@color_multi
+		before_lighting_blend =	 	1
+		after_lighting_blend =		0
 	}
 
 	gradient_parameters = {
 		zoom_step = @zoom_step_mid
-		
-		gradient_alpha_inside = 	0.1
-		gradient_alpha_outside =    1.5
-		gradient_width = 			4
-		gradient_color_mult =		1.2
-		edge_width = 				0.01
-		edge_sharpness = 			0.03
-		edge_alpha = 				0.2
-		edge_color_mult = 			1.25
-		before_lighting_blend =		0.4
-		after_lighting_blend =		0.6
+
+		gradient_alpha_inside = 	0
+		gradient_alpha_outside = 	0.0
+		gradient_width = 			0.05
+		gradient_color_mult =		@color_multi
+		edge_width = 				0.025
+		edge_sharpness = 			0.01
+		edge_alpha = 				1.0
+		edge_color_mult = 			@color_multi
+		before_lighting_blend =	 	1
+		after_lighting_blend =		0
 	}
 
 	gradient_parameters = {

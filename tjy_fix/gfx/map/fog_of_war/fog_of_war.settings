@@ -1,7 +1,7 @@
 "ShowAlphaMask" = no
-"Shadow_Color" = hsv{ 0.560000 0.85000 0.160000 1.000000 }
-"Cloud_Color" = hsv{ 0.650000 0.100000 1.000000 1.000000 }
-"Cloud_Color_Secondary" = hsv{ 0.562500 0.187500 0.804688 1.000000 }
+"Shadow_Color" = hsv{ 0.560000 0.85000 0.160000 0.000000 }
+"Cloud_Color" = hsv{ 0.650000 0.100000 1.000000 0.000000 }
+"Cloud_Color_Secondary" = hsv{ 0.562500 0.187500 0.804688 0.000000 }
 "Cloud_Color_Gradient_Min" = 0.000000
 "Cloud_Color_Gradient_Max" = 1.000000
 "Cloud_Height" = 22.000000
