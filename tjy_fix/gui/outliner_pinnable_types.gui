@@ -68,7 +68,7 @@ types pinnable_outliner_items {
 
 	type outliner_commanders = pinnable_outliner_group {
 		datacontext = "[Outliner.AccessCategory('commanders')]"
-		
+
 		blockoverride "entry_size" {
 			size = { 350 30 }
 		}
@@ -164,7 +164,7 @@ types pinnable_outliner_items {
 							using = tooltip_above
 							size = { 17 23 }
 							alpha = "[TransparentIfFalse(InterestGroupTrait.IsEnabled(InterestGroup.Self))]"
-							
+
 							tooltipwidget = {
 								FancyTooltip_InterestGroupTrait = {
 									blockoverride "icon" {
@@ -210,7 +210,7 @@ types pinnable_outliner_items {
 
 	type outliner_interest_groups = pinnable_outliner_group {
 		datacontext = "[Outliner.AccessCategory('interest_groups')]"
-		
+
 		blockoverride "entry_size" {
 			size = { 350 30 }
 		}
@@ -223,7 +223,7 @@ types pinnable_outliner_items {
 				block "visibility" {
 					visible = yes
 				}
-				
+
 				container = {
 					visible = "[Not(OutlinerEntry.IsCategory)]"
 					interest_group_item = {
@@ -242,7 +242,7 @@ types pinnable_outliner_items {
 						blockoverride "entry_size" {
 							size = { 310 30 }
 						}
-						
+
 						interest_group_item = {
 
 							blockoverride "text_size" {
@@ -360,6 +360,11 @@ types pinnable_outliner_items {
 	type state_item = pinnable_outliner_entry {
 		datacontext = "[OutlinerEntry.AccessScope.AccessState]"
 
+		blockoverride "text_size" {
+			minimumsize = { 115 -1 }
+			maximumsize = { 115 -1 }
+		}
+
 		blockoverride "text" {
 			text = "[State.GetNameNoFormatting]"
 		}
@@ -378,14 +383,35 @@ types pinnable_outliner_items {
 			onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 		}
 
+		## added
 		blockoverride "additional_info" {
 			textbox = {
-				align = right|nobaseline
+				align = left|nobaseline
 				autoresize = yes
-				minimumsize = { 70 -1 }
-				text = "[State.GetPopulationSize|*1v]"
+				margin_right = 10
+				minimumsize = { 65 -1 }
+				maximumsize = { 65 -1 }
+				text = "[State.GetPopulationSize|v*1]"
 				tooltip = "TOOLTIP_STATE_POPULATION"
 			}
+			textbox = {
+				align = left|nobaseline
+				autoresize = yes
+				margin_right = 10
+				minimumsize = { 65 -1 }
+				maximumsize = { 65 -1 }
+				text = "P: [State.GetNumSubsistenceWorkingAdults|*0]"
+				tooltip = "TOOLTIP_STATE_POPULATION"
+			}
+			textbox = {
+				align = left|nobaseline
+				autoresize = yes
+				minimumsize = { 65 -1 }
+				maximumsize = { 65 -1 }
+				text = "U: [State.GetNumUnemployedWorkingAdults|*0]"
+				tooltip = "TOOLTIP_STATE_POPULATION"
+			}
+		### /added
 		}
 		blockoverride "onclick" {
 			onclick = "[InformationPanelBar.OpenStatePanel( State.AccessSelf )]"
@@ -424,7 +450,7 @@ types pinnable_outliner_items {
 				block "visibility" {
 					visible = yes
 				}
-				
+
 				blockoverride "entry_size" {
 					size = { 330 30 }
 				}
@@ -474,7 +500,7 @@ types pinnable_outliner_items {
 				direction = vertical
 				widgetanchor = left|vcenter
 				parentanchor = left|vcenter
-				
+
 				textbox = {
 					text = "[Player.GetName]"
 					align = left|nobaseline
@@ -493,7 +519,7 @@ types pinnable_outliner_items {
 			spacing = 10
 			visible = "[And(Not(Player.IsObserver), Player.HasPlayable)]"
 			datacontext = "[Player.GetPlayedOrObservedCountry]"
-			
+
 			small_flag = {
 				widgetanchor = left|vcenter
 				parentanchor = left|vcenter
