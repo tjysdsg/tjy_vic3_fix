@@ -383,36 +383,40 @@ types pinnable_outliner_items {
 			onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 		}
 
-		## added
+        # Peasants and unemployment
 		blockoverride "additional_info" {
 			textbox = {
 				align = left|nobaseline
 				autoresize = yes
-				margin_right = 10
+				margin_left = 5
+				margin_right = 5
 				minimumsize = { 65 -1 }
 				maximumsize = { 65 -1 }
-				text = "[State.GetPopulationSize|v*1]"
+				text = "[State.GetPopulationSize|*1]"
 				tooltip = "TOOLTIP_STATE_POPULATION"
 			}
 			textbox = {
 				align = left|nobaseline
 				autoresize = yes
-				margin_right = 10
-				minimumsize = { 65 -1 }
-				maximumsize = { 65 -1 }
-				text = "P: [State.GetNumSubsistenceWorkingAdults|*0]"
+				margin_left = 5
+				margin_right = 5
+				minimumsize = { 55 -1 }
+				maximumsize = { 55 -1 }
+				text = "[GetPopType('peasants').GetTextIcon][State.GetNumSubsistenceWorkingAdults|*0]"
 				tooltip = "TOOLTIP_STATE_POPULATION"
 			}
 			textbox = {
 				align = left|nobaseline
 				autoresize = yes
-				minimumsize = { 65 -1 }
-				maximumsize = { 65 -1 }
-				text = "U: [State.GetNumUnemployedWorkingAdults|*0]"
+				margin_left = 5
+				margin_right = 5
+				minimumsize = { 55 -1 }
+				maximumsize = { 55 -1 }
+				text = "[LabelingHelper.GetIconForStandardOfLivingCFixedPoint('(CFixedPoint)0')][State.GetNumUnemployedWorkingAdults|*0]"
 				tooltip = "TOOLTIP_STATE_POPULATION"
 			}
-		### /added
 		}
+
 		blockoverride "onclick" {
 			onclick = "[InformationPanelBar.OpenStatePanel( State.AccessSelf )]"
 		}
