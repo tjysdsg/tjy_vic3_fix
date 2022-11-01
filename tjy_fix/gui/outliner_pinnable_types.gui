@@ -109,7 +109,7 @@ types pinnable_outliner_items {
 		datacontext = "[OutlinerEntry.AccessScope.AccessInterestGroup]"
 
 		blockoverride "text" {
-			text = "[InterestGroup.GetNameNoFormatting]"
+			text = "[InterestGroup.GetNameNoIcon]"
 			maximumsize = { 100 -1 }
 		}
 

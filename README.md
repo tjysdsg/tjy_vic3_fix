@@ -11,4 +11,4 @@ and..
 My additions include:
 
 - Some error fixes
-- ...
+- Tweak IG Approval Rating in Outliner to have colored Interest Group name
