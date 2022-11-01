@@ -6,6 +6,7 @@
 - [Construction Queue with States](https://steamcommunity.com/sharedfiles/filedetails/?id=2881774859)
 - [IG Approval Rating in Outliner](https://steamcommunity.com/sharedfiles/filedetails/?id=2882291604)
 - [Unemployment and Peasant Data](https://steamcommunity.com/sharedfiles/filedetails/?id=2882193032)
+- [Revenge of the Political Map Mode](https://steamcommunity.com/sharedfiles/filedetails/?id=2880479137)
 
 and..
 
