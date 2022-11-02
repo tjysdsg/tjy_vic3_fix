@@ -1,4 +1,4 @@
-@zoom_step_flatmap_far = 	17 							# the furthest zoom out
+﻿@zoom_step_flatmap_far = 	17 							# the furthest zoom out
 @zoom_step_flatmap = 		10 							# zoom step where the paper map kicks in
 @zoom_step_mid = 			9 							# introduce some colour
 @zoom_step_near = 			6							# close zoom

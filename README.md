@@ -12,13 +12,14 @@ and..
 
 My additions include:
 
+- Available Decision Panel
 - Some error fixes
-- Tweak IG Approval Rating in Outliner to have colored Interest Group name
+- Add colored interest group name to Tweak IG Approval Rating in Outliner
 - Use icon+number to display peasants and unemployment (Prettify Unemployment and Peasant Data)
-- Remove shadows on the ground
+- Remove shadows on the ground so that the map is brighter and clearer
 
 # TODOs
 
-- 最缺的产品, 按价格sort, 选取前n个然后放成一排
 - 哪个建筑耗一个产品消耗的最多
 - 哪个pop turmoil和radical最高
+- Filter notifications
