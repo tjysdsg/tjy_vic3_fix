@@ -1,0 +1,13 @@
+{
+  "name": "Available Decisions in the Journal Entry Outliner",
+  "id": "",
+  "version": "",
+  "picture": "thumbnail.png",
+  "supported_game_version": "",
+  "short_description": "",
+  "tags": [],
+  "relationships": [],
+  "game_custom_data": {
+    "multiplayer_synchronized": true
+  }
+}
