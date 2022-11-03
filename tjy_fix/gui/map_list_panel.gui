@@ -798,32 +798,16 @@ types map_list_panel_types {
 				elide = right
 			}
 
-			widget = {
+			textbox = {
+				margin = { 5 0 }
+				margin_right = 10
 				size = { 90 25 }
+				align = right|nobaseline
+				datacontext = "[MapListOption.GetBuildingData.GetBuilding]"
+				text = "#v @money![Building.GetBuildingType.GetExpansionProductivityImpact(Building.Self, Building.GetState)|+]#!"
+				tooltip = "[Building.GetBuildingType.GetExpansionProductivityImpactDesc(Building.Self, Building.GetState)]"
 				parentanchor = vcenter
-				textbox = {
-					datacontext = "[MapListOption.GetBuildingData.GetBuilding]"
-					visible = "[And(GreaterThan_int32(Building.GetExpansionLevel,'(int32)0'), Not(MapListBuildingPanel.GetBuildingType.IsGovernmentFunded))]"
-					using = competitiveness_building_type_tooltip_with_graph
-					using = tooltip_above
-					margin = { 5 0 }
-					size = { 90 25 }
-					align = right|nobaseline
-					text = "[Building.GetProfitabilityInType] ([Building.GetProfitabilityCompareIconInType])"
-					parentanchor = vcenter
-					elide = right
-				}
-				textbox = {
-					datacontext = "[MapListOption.GetBuildingData.GetBuilding]"
-					visible = "[Not(And(GreaterThan_int32(Building.GetExpansionLevel,'(int32)0'), Not(MapListBuildingPanel.GetBuildingType.IsGovernmentFunded)))]"
-					margin = { 5 0 }
-					size = { 90 25 }
-					align = right|nobaseline
-					text = "NOT_AVAILABLE"
-					alpha = "[TransparentIfTrue(Not(And(GreaterThan_int32(Building.GetExpansionLevel,'(int32)0'), Not(MapListBuildingPanel.GetBuildingType.IsGovernmentFunded))))]"
-					parentanchor = vcenter
-					elide = right
-				}
+				elide = right
 			}
 
 			textbox = {
@@ -832,8 +816,8 @@ types map_list_panel_types {
 				size = { 100 25 }
 				align = right|nobaseline
 				datacontext = "[MapListOption.GetBuildingData.GetBuilding]"
-				text = "#v [Building.GetBuildingType.GetExpansionProfitImpact(Building.Self, Building.GetState)|K+=]#!"
-				tooltip = "[Building.GetBuildingType.GetExpansionProfitImpactDesc(Building.Self, Building.GetState)]"
+				text = "#v [Building.GetBuildingType.GetExpansionRevenueImpact(Building.Self, Building.GetState)|K+=]#!"
+				tooltip = "[Building.GetBuildingType.GetExpansionRevenueImpactDesc(Building.Self, Building.GetState)]"
 				parentanchor = vcenter
 				elide = right
 			}
@@ -1490,110 +1474,21 @@ types map_list_panel_types {
 	}
 
 	# STATE GDP (NATIONALLY)
-
-	type state_gdp_nationally_map_list_panel = map_list_panel {
+	type state_gdp_nationally_map_list_panel = state_map_list_one_value {
 		name = "state_gdp_nationally_map_list_panel"
 
 		blockoverride "itemvisibility" {
 			visible = "[ObjectsEqual(MapListOption.GetStateData.GetState.GetOwner, GetPlayer.Self)]"
 		}
 
-		blockoverride "header_close_button" {
-			onclick = "[MapListPanelManager.CloseCurrentPanel]"
+		blockoverride "shown_on_map_header" {
+			text = "GDP_CONTRIBUTION"
+			onclick = "[MapListPanel.Sort('gdp_contribution')]"
 		}
-
-		blockoverride "headers" {
-			sort_button = {
-				align = left|nobaseline
-				text = "NAME"
-				size = { 240 20 }
-				onclick = "[MapListPanel.Sort('name')]"
-			}
-			sort_button = {
-				align = hcenter|nobaseline
-				size = { 100 20 }
-				text = "POPULATION"
-				onclick = "[MapListPanel.Sort('population')]"
-			}
-			sort_button = {
-				align = hcenter|nobaseline
-				size = { 100 20 }
-				text = "SOL_SHORT"
-				onclick = "[MapListPanel.Sort('standard_of_living')]"
-			}
-			sort_button = {
-				align = hcenter|nobaseline
-				size = { 100 20 }
-				text = "GDP_SHORT"
-				onclick = "[MapListPanel.Sort('gdp_contribution')]"
-			}
+		blockoverride "shown_on_map_value" {
+			text = "@money![State.GetGDPContribution|Dv]"
+			tooltip = "CURRENT_GDP_STATE"
 		}
-
-		blockoverride "values" {
-			textbox = {
-				margin = { 5 0 }
-				size = { 240 25 }
-				align = left|nobaseline
-				text = "[MapListOption.GetStateData.GetState.GetOwner.GetFlagTextIcon]  [MapListOption.GetStateData.GetState.GetName]"
-				parentanchor = vcenter
-				elide = right
-			}
-
-			textbox = {
-				datacontext = "[MapListOption.GetStateData.GetState]"
-				margin = { 5 0 }
-				size = { 100 25 }
-				align = right|nobaseline
-				parentanchor = vcenter
-				elide = right
-				text = "[State.GetPopulationSize|Kv]"
-				tooltip = "TOOLTIP_STATE_POPULATION"
-			}
-
-			textbox = {
-				datacontext = "[MapListOption.GetStateData.GetState]"
-				margin = { 5 0 }
-				size = { 100 25 }
-				align = right|nobaseline
-				parentanchor = vcenter
-				elide = right
-				tooltip = "NUM_SOL"
-				text = "[State.GetAverageStandardOfLivingAll|v1]"
-			}
-
-			textbox = {
-				datacontext = "[MapListOption.GetStateData.GetState]"
-				margin = { 5 0 }
-				size = { 100 25 }
-				align = right|nobaseline
-				parentanchor = vcenter
-				elide = right
-				text = "@money![State.GetGDPContribution|Dv]"
-				tooltip = "CURRENT_GDP_STATE"
-			}
-		}
-
-		blockoverride "interaction" {
-			datacontext = "[MapListOption.AccessStateData.AccessState]"
-			onclick = "[InformationPanelBar.OpenStatePanel(State.AccessSelf)]"
-			onrightclick = "[RightClickMenuManager.ShowForState(State.AccessSelf)]"
-			onmousehierarchyenter = "[AccessHighlightManager.HighlightState(State.Self)]"
-			onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
-		}
-
-		# blockoverride "itemvisibility" {
-		# 	visible = "[ObjectsEqual(MapListOption.GetStateData.GetState.GetOwner, GetPlayer.Self)]"
-		# }
-
-		# blockoverride "shown_on_map_header" {
-		# 	text = "GDP_CONTRIBUTION"
-		# 	onclick = "[MapListPanel.Sort('gdp_contribution')]"
-		# }
-		# blockoverride "shown_on_map_value" {
-		# 	text = "@money![State.GetGDPContribution|Dv]"
-		# 	tooltip = "CURRENT_GDP_STATE"
-		# }
-
 	}
 
 	# STATE STANDARD OF LIVING
