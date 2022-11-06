@@ -11,6 +11,7 @@ Features (you can find separate mod that only contains a specific features in th
 - Add colored interest group name and approval rating in the outliner
 - Display peasants and unemployment with icons in the state outliner
 - Brighter map (by removing clouds, godrays, and shadows on the ground)
+- Show number of radicals and net income of the population in population list
 
 and all the features provided by the following mods:
 
