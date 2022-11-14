@@ -2,7 +2,7 @@ Subscribe here: https://steamcommunity.com/sharedfiles/filedetails/?id=288314357
 
 A work in progress
 
-Compatible with 1.0.4
+Compatible with 1.0.6
 
 Features (you can find separate mod that only contains a specific features in the links below):
 

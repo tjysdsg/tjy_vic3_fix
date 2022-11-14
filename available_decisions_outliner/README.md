@@ -1,6 +1,6 @@
 Subscribe here: https://steamcommunity.com/sharedfiles/filedetails/?id=2883978920
 
-Compatible with 1.0.4
+Compatible with 1.0.6
 
 Feature:
 
